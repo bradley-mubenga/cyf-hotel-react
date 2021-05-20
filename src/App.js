@@ -27,7 +27,7 @@ const App = () => {
         <London />
       </div>
       <Bookings />
-      <Footer props={footerDetails} />
+      <Footer address={footerDetails} />
     </div>
   );
 };
