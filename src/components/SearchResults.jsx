@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchResults(props) {
+export default function SearchResults({ results }) {
   return (
     <table class="table">
       <thead>
@@ -15,9 +15,9 @@ export default function SearchResults(props) {
         </tr>
       </thead>
       <tbody>
-        {props.results ? (
-          props.results.map(booking => {
-            <tr>
+        {results ? (
+          results.map(booking => (
+            <tr key={booking.id}>
               <th scope="row">{booking.id}</th>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
@@ -25,8 +25,8 @@ export default function SearchResults(props) {
               <td>{booking.roomId}</td>
               <td>{booking.checkInDate}</td>
               <td>{booking.checkInDate}</td>
-            </tr>;
-          })
+            </tr>
+          ))
         ) : (
           <h1>I'm Fake</h1>
         )}
