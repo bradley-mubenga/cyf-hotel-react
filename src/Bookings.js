@@ -13,6 +13,7 @@ const Bookings = () => {
       <div className="container">
         <Search search={search} />
         <SearchResults results={FakeBookings} />
+        <SearchResults results={FakeBookings} />
       </div>
     </div>
   );
