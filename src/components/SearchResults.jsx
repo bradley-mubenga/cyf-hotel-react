@@ -4,6 +4,12 @@ import moment from "moment";
 moment().format();
 
 export default function SearchResults({ results }) {
+  function getDiff(checkIn, checkOut) {
+    var a = moment(checkOut);
+    var b = moment(checkIn);
+    return a.diff(b, "days");
+  }
+
   return (
     <table class="table">
       <thead>
@@ -29,11 +35,11 @@ export default function SearchResults({ results }) {
               <td>{booking.roomId}</td>
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
-              <td>{}</td>
+              <td>{getDiff(booking.checkInDate, booking.checkOutDate)}</td>
             </tr>
           ))
         ) : (
-          <h1>I'm Fake</h1>
+          <h1>No Data Availible</h1>
         )}
       </tbody>
     </table>
