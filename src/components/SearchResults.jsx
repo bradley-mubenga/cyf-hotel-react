@@ -1,5 +1,8 @@
 import React from "react";
 
+import moment from "moment";
+moment().format();
+
 export default function SearchResults({ results }) {
   return (
     <table class="table">
@@ -12,6 +15,7 @@ export default function SearchResults({ results }) {
           <th scope="col">room id</th>
           <th scope="col">check in date</th>
           <th scope="col">check out date</th>
+          <th scope="col">days in</th>
         </tr>
       </thead>
       <tbody>
@@ -24,7 +28,8 @@ export default function SearchResults({ results }) {
               <td>{booking.email}</td>
               <td>{booking.roomId}</td>
               <td>{booking.checkInDate}</td>
-              <td>{booking.checkInDate}</td>
+              <td>{booking.checkOutDate}</td>
+              <td>{}</td>
             </tr>
           ))
         ) : (
