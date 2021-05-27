@@ -2,6 +2,8 @@ import React from "react";
 
 import Bookings from "./Bookings";
 import Heading from "./components/Heading";
+import Resturant from "./Restaurant";
+
 import {
   Glasgow,
   Manchester,
@@ -27,6 +29,7 @@ const App = () => {
         <London />
       </div>
       <Bookings />
+      <Resturant />
       <Footer address={footerDetails} />
     </div>
   );
