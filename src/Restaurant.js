@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { AddPizza } from "../src/components/order-buttons";
+import Order from "../src/components/Order";
 
 const Restaurant = () => {
   return (
     <div>
       <h3>Restaurant Orders</h3>
       <ul>
-        <li>
-          <AddPizza />
-        </li>
+        <Order />
       </ul>
     </div>
   );
