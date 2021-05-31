@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import moment from "moment";
 moment().format();
@@ -10,8 +10,14 @@ export default function SearchResults({ results }) {
     return a.diff(b, "days");
   }
 
+  const [isActive, setActive] = useState("false");
+
+  function colorChange(e) {
+    setActive(!isActive);
+  }
+
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -27,7 +33,11 @@ export default function SearchResults({ results }) {
       <tbody>
         {results ? (
           results.map(booking => (
-            <tr key={booking.id}>
+            <tr
+              key={booking.id}
+              onClick={colorChange}
+              className={isActive ? "table-dark" : null}
+            >
               <th scope="row">{booking.id}</th>
               <td>{booking.title}</td>
               <td>{booking.firstName}</td>
