@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AddPizza } from "./order-buttons";
 
-export default function Order() {
+export default function Order({ oderType }) {
   const [orders, setOrders] = useState(0);
 
   function orderOne() {
@@ -10,7 +10,9 @@ export default function Order() {
 
   return (
     <li>
-      <p>Pizzas: {orders} </p>
+      <p>
+        {oderType}: {orders}{" "}
+      </p>
       <AddPizza orderOne={orderOne} />
     </li>
   );
