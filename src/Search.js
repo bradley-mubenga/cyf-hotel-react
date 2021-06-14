@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 import SearchButton from "../src/components/SearchButton";
 
 const Search = () => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchInput = e => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
+
   return (
     <div className="search">
       <header className="page-header">
@@ -18,6 +25,8 @@ const Search = () => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
+                value={searchInput}
+                onChange={handleSearchInput}
               />
               <SearchButton />
             </div>
