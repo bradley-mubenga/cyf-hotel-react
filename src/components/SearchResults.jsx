@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 moment().format();
 
-export default function SearchResults({ results }) {
+function SearchResults({ results }) {
   function getDiff(checkIn, checkOut) {
     var a = moment(checkOut);
     var b = moment(checkIn);
@@ -15,6 +15,10 @@ export default function SearchResults({ results }) {
   function colorChange(e) {
     setActive(!isActive);
   }
+
+  useEffect(() => {
+    console.log(results);
+  });
 
   return (
     <table className="table">
@@ -55,3 +59,5 @@ export default function SearchResults({ results }) {
     </table>
   );
 }
+
+export default SearchResults;
